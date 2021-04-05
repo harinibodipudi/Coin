@@ -7,8 +7,7 @@ public class TestCoin {
     @Test
     public void testProbabilityOfHeadIsEqualToThatOfTailsWhenACoinIsFlipped(){
         boolean actualValue=coin.toCheckHeadProbabilityIsEqualToTailProbability();
-        boolean expectedValue = true;
 
-
+        Assertions.assertEquals(true,actualValue);
     }
 }
