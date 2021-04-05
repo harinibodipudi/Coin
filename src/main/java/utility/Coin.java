@@ -1,6 +1,6 @@
 package utility;
 
-public class Coin implements coininterface {
+public class Coin {
     public double probabilityOfHead = 0.5;
     public double probabilityOfTails = 0.5;
 
