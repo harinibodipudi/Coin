@@ -17,7 +17,7 @@ public class TestCoinProbability {
          CoinProbability coin1 = new CoinProbability(0.5, 0.5);
          CoinProbability coin2 = new CoinProbability(0.5,0.5);
 
-         double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfHead, coin1.probabilityOfHead);
+         double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfHead, coin2.probabilityOfHead);
 
          Assertions.assertEquals(0.25, actualValue);
     }
@@ -26,7 +26,7 @@ public class TestCoinProbability {
         CoinProbability coin1 = new CoinProbability(0.5, 0.5);
         CoinProbability coin2 = new CoinProbability(0.5,0.5);
 
-        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfHead, coin1.probabilityOfTails);
+        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfHead, coin2.probabilityOfTails);
 
         Assertions.assertEquals(0.25, actualValue);
     }
@@ -35,7 +35,7 @@ public class TestCoinProbability {
         CoinProbability coin1 = new CoinProbability(0.5, 0.5);
         CoinProbability coin2 = new CoinProbability(0.5,0.5);
 
-        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfTails, coin1.probabilityOfHead);
+        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfTails, coin2.probabilityOfHead);
 
         Assertions.assertEquals(0.25, actualValue);
     }
@@ -44,7 +44,7 @@ public class TestCoinProbability {
         CoinProbability coin1 = new CoinProbability(0.5, 0.5);
         CoinProbability coin2 = new CoinProbability(0.5,0.5);
 
-        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfTails, coin1.probabilityOfTails);
+        double actualValue = coin1.probability_eventOccurring_Together(coin1.probabilityOfTails, coin2.probabilityOfTails);
 
         Assertions.assertEquals(0.25, actualValue);
     }
