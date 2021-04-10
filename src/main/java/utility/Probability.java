@@ -1,5 +1,6 @@
 package utility;
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class Probability {
@@ -27,5 +28,10 @@ public class Probability {
         return firstEvent*secondEvent;
     }
 
+    public double not(double probabilityOfEventOccurring){
+
+
+        return Math.round((1-probabilityOfEventOccurring)*10.0)/10.0;
+    }
 
 }
