@@ -1,6 +1,5 @@
 package utility;
 
-import java.text.DecimalFormat;
 import java.util.Objects;
 
 public class Probability {
@@ -23,15 +22,17 @@ public class Probability {
         return this==obj && Double.compare(this.probabilityOfHead, probability.probabilityOfTails)==0;
 
     }
-    public static double add(double firstEvent, double secondEvent){
+    public static double and(double firstEvent, double secondEvent){
 
         return firstEvent*secondEvent;
     }
 
     public double not(double probabilityOfEventOccurring){
 
-
         return Math.round((1-probabilityOfEventOccurring)*10.0)/10.0;
     }
 
+    public static double or(double firstEvent, double secondEvent){
+        return firstEvent+secondEvent- and(firstEvent,secondEvent);
+    }
 }
