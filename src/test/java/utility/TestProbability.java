@@ -3,7 +3,8 @@ package utility;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 
-import static utility.Probability.add;
+import static utility.Probability.and;
+import static utility.Probability.or;
 
 public class TestProbability {
 
@@ -20,7 +21,7 @@ public class TestProbability {
          Probability HeadsForFirstCoinToss = new Probability(0.5, 0.5);
          Probability HeadsForSecondCoinToss = new Probability(0.5,0.5);
 
-         double actualValue = add(HeadsForFirstCoinToss.probabilityOfHead, HeadsForSecondCoinToss.probabilityOfHead);
+         double actualValue = and(HeadsForFirstCoinToss.probabilityOfHead, HeadsForSecondCoinToss.probabilityOfHead);
 
          Assertions.assertEquals(0.25, actualValue);
     }
@@ -29,7 +30,7 @@ public class TestProbability {
         Probability HeadForFirstCoinToss = new Probability(0.5, 0.5);
         Probability TailsForSecondCoinToss = new Probability(0.5,0.5);
 
-        double actualValue = add(HeadForFirstCoinToss.probabilityOfHead, TailsForSecondCoinToss.probabilityOfTails);
+        double actualValue = and(HeadForFirstCoinToss.probabilityOfHead, TailsForSecondCoinToss.probabilityOfTails);
 
         Assertions.assertEquals(0.25, actualValue);
     }
@@ -38,7 +39,7 @@ public class TestProbability {
         Probability TailsForFirstCoinToss = new Probability(0.5, 0.5);
         Probability HeadsForFirstCoinToss = new Probability(0.5,0.5);
 
-        double actualValue = add(TailsForFirstCoinToss.probabilityOfTails, HeadsForFirstCoinToss.probabilityOfHead);
+        double actualValue = and(TailsForFirstCoinToss.probabilityOfTails, HeadsForFirstCoinToss.probabilityOfHead);
 
         Assertions.assertEquals(0.25, actualValue);
     }
@@ -47,7 +48,7 @@ public class TestProbability {
         Probability TailsForFirstCoinToss = new Probability(0.5, 0.5);
         Probability TailsForSecondCoinToss = new Probability(0.5,0.5);
 
-        double actualValue = add(TailsForFirstCoinToss.probabilityOfTails, TailsForSecondCoinToss.probabilityOfTails);
+        double actualValue = and(TailsForFirstCoinToss.probabilityOfTails, TailsForSecondCoinToss.probabilityOfTails);
 
         Assertions.assertEquals(0.25, actualValue);
     }
@@ -73,4 +74,34 @@ public class TestProbability {
 
         Assertions.assertEquals(probability.probabilityOfHead, actualValue);
     }
+
+    @Test
+    public void testProbabilityForEitherHeadsOrHeadsToOccur(){
+        Probability headsOnFirstCoinToss = new Probability(0.5,0.5);
+        Probability headsOnSecondCoinToss = new Probability(0.5,0.5);
+
+        double actualValue = or(headsOnFirstCoinToss.probabilityOfHead,headsOnSecondCoinToss.probabilityOfHead);
+
+        Assertions.assertEquals(0.75,actualValue);
+    }
+
+    @Test
+    public void testProbabilityForEitherHeadsOrTailsToOccur(){
+        Probability headsOnFirstCoinToss = new Probability(0.5,0.5);
+        Probability tailsOnSecondCoinToss = new Probability(0.5,0.5);
+
+        double actualValue = or(headsOnFirstCoinToss.probabilityOfHead,tailsOnSecondCoinToss.probabilityOfTails);
+
+        Assertions.assertEquals(0.75,actualValue);
+    }
+    @Test
+    public void testProbabilityForEitherTailsOrTailsToOccur(){
+        Probability tailsOnFirstCoinToss = new Probability(0.5,0.5);
+        Probability tailsOnSecondCoinToss = new Probability(0.5,0.5);
+
+        double actualValue = or(tailsOnFirstCoinToss.probabilityOfTails,tailsOnSecondCoinToss.probabilityOfTails);
+
+        Assertions.assertEquals(0.75,actualValue);
+    }
+
 }
