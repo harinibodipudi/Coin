@@ -7,7 +7,6 @@ public class Probability {
     public double probabilityOfTails;
 
 
-
     public Probability(double probabilityOfHead, double probabilityOfTails) {
         this.probabilityOfHead = probabilityOfHead;
         this.probabilityOfTails = probabilityOfTails;
@@ -27,7 +26,7 @@ public class Probability {
         return firstEvent*secondEvent;
     }
 
-    public double not(double probabilityOfEventOccurring){
+    public static double not(double probabilityOfEventOccurring){
 
         return Math.round((1-probabilityOfEventOccurring)*10.0)/10.0;
     }
