@@ -54,29 +54,13 @@ public class TestProbability {
     }
     @Test
     public void testProbabilityOfEventNotOccurring(){
-        Probability probability = new Probability(0.5,0.5);
-        double actualValue = probability.not(0.7);
+        double actualValue = Probability.not(0.7);
 
         Assertions.assertEquals(0.3, actualValue);
     }
 
     @Test
-    public void testProbabilityOfHeadsNotOccurring(){
-        Probability probability = new Probability(0.5,0.5);
-        double actualValue = probability.not(probability.probabilityOfHead);
-
-        Assertions.assertEquals(probability.probabilityOfTails, actualValue);
-    }
-    @Test
-    public void testProbabilityOfTailsNotOccurring(){
-        Probability probability = new Probability(0.5,0.5);
-        double actualValue = probability.not(probability.probabilityOfTails);
-
-        Assertions.assertEquals(probability.probabilityOfHead, actualValue);
-    }
-
-    @Test
-    public void testProbabilityForEitherHeadsOrHeadsToOccur(){
+    public void testProbabilityForEitherHeadsToOccur(){
         Probability headsOnFirstCoinToss = new Probability(0.5,0.5);
         Probability headsOnSecondCoinToss = new Probability(0.5,0.5);
 
@@ -95,7 +79,7 @@ public class TestProbability {
         Assertions.assertEquals(0.75,actualValue);
     }
     @Test
-    public void testProbabilityForEitherTailsOrTailsToOccur(){
+    public void testProbabilityForEitherTailsToOccur(){
         Probability tailsOnFirstCoinToss = new Probability(0.5,0.5);
         Probability tailsOnSecondCoinToss = new Probability(0.5,0.5);
 
