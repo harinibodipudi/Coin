@@ -15,8 +15,6 @@ public class Probability {
     @Override
     public boolean equals(Object obj) {
         Probability probability =(Probability)obj;
-        System.out.println(Objects.hash(probability.probabilityOfTails));
-        System.out.println(Objects.hash(this.probabilityOfHead));
 
         return this==obj && Double.compare(this.probabilityOfHead, probability.probabilityOfTails)==0;
 
