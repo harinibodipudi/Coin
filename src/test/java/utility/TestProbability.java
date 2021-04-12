@@ -60,7 +60,7 @@ public class TestProbability {
     }
 
     @Test
-    public void testProbabilityForEitherHeadsToOccur(){
+    public void testProbabilityForEitherHeadsToOccurOnTossingTwoCoins(){
         Probability headsOnFirstCoinToss = new Probability(0.5,0.5);
         Probability headsOnSecondCoinToss = new Probability(0.5,0.5);
 
@@ -70,7 +70,7 @@ public class TestProbability {
     }
 
     @Test
-    public void testProbabilityForEitherHeadsOrTailsToOccur(){
+    public void testProbabilityForEitherHeadsOrTailsToOccurOnTossingTwoCoins(){
         Probability headsOnFirstCoinToss = new Probability(0.5,0.5);
         Probability tailsOnSecondCoinToss = new Probability(0.5,0.5);
 
@@ -78,14 +78,6 @@ public class TestProbability {
 
         Assertions.assertEquals(0.75,actualValue);
     }
-    @Test
-    public void testProbabilityForEitherTailsToOccur(){
-        Probability tailsOnFirstCoinToss = new Probability(0.5,0.5);
-        Probability tailsOnSecondCoinToss = new Probability(0.5,0.5);
 
-        double actualValue = or(tailsOnFirstCoinToss.probabilityOfTails,tailsOnSecondCoinToss.probabilityOfTails);
-
-        Assertions.assertEquals(0.75,actualValue);
-    }
 
 }
